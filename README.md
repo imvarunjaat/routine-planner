@@ -1,73 +1,140 @@
-# Welcome to your Lovable project
+# 🌅 Daily Prep Assistant
 
-## Project info
+A beautiful, modern web application that gives users a personalized daily summary to start their day right. Built for the July 2025 hackathon with React, Tailwind CSS, and Framer Motion.
 
-**URL**: https://lovable.dev/projects/d7c09719-e490-43ce-b8c1-ea9a023a8633
+![Daily Prep Assistant](src/assets/morning-hero.jpg)
 
-## How can I edit this code?
+## ✨ Features
 
-There are several ways of editing your application.
+- **🌤️ Weather Summary**: Current weather conditions with beautiful icons
+- **📅 Calendar Events**: Today's schedule from Google Calendar
+- **💬 Daily Inspiration**: Motivational quotes to start your day
+- **📧 Email Summary**: Send your daily prep summary to your inbox
+- **🎨 Beautiful Design**: Soft pastel theme with morning vibes
+- **📱 Fully Responsive**: Works perfectly on all devices
+- **⚡ Smooth Animations**: Delightful Framer Motion animations
 
-**Use Lovable**
+## 🚀 Quick Start
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/d7c09719-e490-43ce-b8c1-ea9a023a8633) and start prompting.
+1. **Clone and Install**
+   ```bash
+   git clone <YOUR_GIT_URL>
+   cd daily-prep-assistant
+   npm install
+   ```
 
-Changes made via Lovable will be committed automatically to this repo.
+2. **Start Development**
+   ```bash
+   npm run dev
+   ```
 
-**Use your preferred IDE**
+3. **Open in Browser**
+   Navigate to `http://localhost:8080`
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🔧 API Integration Setup
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+The app is built with mock data but ready for real API integration. To connect real services:
 
-Follow these steps:
+### Weather (OpenWeatherMap)
+1. Get API key from [OpenWeatherMap](https://openweathermap.org/api)
+2. Update `src/lib/weather.ts` with your API key
+3. Uncomment the real API implementation
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Google Calendar
+1. Set up Google Cloud Console project
+2. Enable Calendar API
+3. Get OAuth 2.0 credentials
+4. Update `src/lib/calendar.ts` with your credentials
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Email (EmailJS)
+1. Create account at [EmailJS](https://www.emailjs.com/)
+2. Set up email service and template
+3. Update `src/lib/email.ts` with your service details
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Quotes (ZenQuotes)
+1. The ZenQuotes API is free and requires no API key
+2. Update `src/lib/quotes.ts` to use real API endpoints
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+## 🎨 Design System
+
+The app uses a beautiful morning-vibes design system with:
+- **Colors**: Soft pastels, morning blues, sunrise oranges
+- **Typography**: Inter font family for clean readability
+- **Animations**: Smooth Framer Motion transitions
+- **Gradients**: Beautiful gradient backgrounds and cards
+- **Shadows**: Elegant soft shadows throughout
+
+## 📁 Project Structure
+
+```
+src/
+├── components/           # React components
+│   ├── WeatherCard.tsx  # Weather display
+│   ├── CalendarEvents.tsx # Calendar integration
+│   ├── QuoteCard.tsx    # Daily quotes
+│   ├── EmailSummary.tsx # Email functionality
+│   └── GreetingHeader.tsx # Personalized greeting
+├── lib/                 # API integration utilities
+│   ├── weather.ts       # Weather API
+│   ├── calendar.ts      # Google Calendar API
+│   ├── email.ts         # EmailJS integration
+│   └── quotes.ts        # ZenQuotes API
+├── assets/              # Images and static files
+└── pages/               # App pages
+    └── Index.tsx        # Main application page
 ```
 
-**Edit a file directly in GitHub**
+## 🏆 Hackathon Ready
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+This project is specifically designed for hackathon success:
+- ✅ **Clean, professional UI/UX**
+- ✅ **Real-world problem solving**
+- ✅ **Modern tech stack**
+- ✅ **Responsive design**
+- ✅ **API integration ready**
+- ✅ **Smooth animations**
+- ✅ **Production-ready code**
 
-**Use GitHub Codespaces**
+## 🛠️ Technologies Used
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- **React 18** - Modern React with hooks
+- **TypeScript** - Type-safe development
+- **Tailwind CSS** - Utility-first CSS framework
+- **Framer Motion** - Smooth animations
+- **Shadcn/ui** - Beautiful UI components
+- **Vite** - Fast development build tool
 
-## What technologies are used for this project?
+## 📱 Responsive Design
 
-This project is built with:
+The app works beautifully on:
+- 📱 Mobile phones (320px+)
+- 📱 Tablets (768px+)
+- 💻 Desktops (1024px+)
+- 🖥️ Large screens (1400px+)
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🎯 Future Enhancements
 
-## How can I deploy this project?
+- [ ] Push notifications for upcoming events
+- [ ] Multiple calendar providers support
+- [ ] Weather alerts and recommendations
+- [ ] Custom themes and personalization
+- [ ] Voice commands integration
+- [ ] Social sharing features
 
-Simply open [Lovable](https://lovable.dev/projects/d7c09719-e490-43ce-b8c1-ea9a023a8633) and click on Share -> Publish.
+## 💡 Contributing
 
-## Can I connect a custom domain to my Lovable project?
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
 
-Yes, you can!
+## 📄 License
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+MIT License - feel free to use this project for your hackathon or personal projects!
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+---
+
+**Built with ❤️ for productive mornings** 🌅
+
+*Ready to win that hackathon? Let's make every morning amazing!* ✨
