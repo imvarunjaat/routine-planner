@@ -1,8 +1,8 @@
-# 🌅 Daily Prep Assistant
+# 🌅 Routine planner Assistant
 
 A beautiful, modern web application that gives users a personalized daily summary to start their day right. Built for the July 2025 hackathon with React, Tailwind CSS, and Framer Motion.
 
-![Daily Prep Assistant](src/assets/morning-hero.jpg)
+![Daily Routine Assistant](src/assets/morning-hero.jpg)
 
 ## ✨ Features
 
@@ -129,12 +129,6 @@ The app works beautifully on:
 4. Add tests if applicable
 5. Submit a pull request
 
-## 📄 License
-
-MIT License - feel free to use this project for your hackathon or personal projects!
-
 ---
 
-**Built with ❤️ for productive mornings** 🌅
-
-*Ready to win that hackathon? Let's make every morning amazing!* ✨
+**Built with ❤️ 
