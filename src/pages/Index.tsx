@@ -59,25 +59,33 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-sky relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-sky relative overflow-hidden transition-smooth">
       {/* Animated Background */}
       <AnimatedBackground />
       
       {/* Hero Background */}
-      <div 
-        className="absolute inset-0 opacity-5"
+      <motion.div 
+        className="absolute inset-0 opacity-5 transition-smooth"
         style={{
           backgroundImage: `url(${heroImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
         }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.05 }}
+        transition={{ duration: 1.5 }}
       />
       
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
+      <motion.div 
+        className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 transition-smooth"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+      />
       
-      <div className="container mx-auto px-4 py-8 max-w-4xl relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 py-8 md:py-12 max-w-5xl relative z-10">
         <AnimatePresence>
           {isLoaded && (
             <motion.div
@@ -94,53 +102,81 @@ const Index = () => {
               {/* Main Content Grid */}
               <motion.div
                 variants={itemVariants}
-                className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+                className="grid gap-6 md:grid-cols-6 lg:grid-cols-12"
               >
-                {/* Weather - Takes 1 column */}
+                {/* Weather - Takes 3 columns on medium screens, 4 on large screens */}
                 <motion.div
                   variants={itemVariants}
-                  className="lg:col-span-1"
+                  className="md:col-span-3 lg:col-span-4"
                 >
                   <WeatherCard />
                 </motion.div>
 
-                {/* Calendar Events - Takes 2 columns on desktop */}
+                {/* Calendar Events - Takes 3 columns on medium, 8 on large screens */}
                 <motion.div
                   variants={itemVariants}
-                  className="md:col-span-2 lg:col-span-2"
+                  className="md:col-span-3 lg:col-span-8"
                 >
                   <CalendarEvents />
                 </motion.div>
               </motion.div>
 
-              {/* Quote Section - Full width */}
-              <motion.div variants={itemVariants}>
-                <QuoteCard />
-              </motion.div>
+              {/* Additional content in a more structured grid */}
+              <motion.div 
+                variants={itemVariants}
+                className="grid gap-6 md:grid-cols-12"
+              >
+                {/* Quote Section - 8 columns on medium+ screens */}
+                <motion.div 
+                  variants={itemVariants}
+                  className="md:col-span-8"
+                >
+                  <QuoteCard />
+                </motion.div>
 
-              {/* Email Summary - Full width */}
-              <motion.div variants={itemVariants}>
-                <EmailSummary data={summaryData} />
+                {/* Email Summary - 4 columns on medium+ screens */}
+                <motion.div 
+                  variants={itemVariants}
+                  className="md:col-span-4"
+                >
+                  <EmailSummary data={summaryData} />
+                </motion.div>
               </motion.div>
 
               {/* Footer */}
               <motion.footer
                 variants={itemVariants}
-                className="text-center py-8"
+                className="text-center py-12 mt-4 border-t border-primary/10"
               >
-                <motion.p
-                  animate={{ opacity: [0.5, 1, 0.5] }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                  className="text-sm text-muted-foreground"
+                <motion.div
+                  className="max-w-lg mx-auto"
                 >
-                  Built with ❤️ for productive mornings
-                </motion.p>
-                <div className="mt-4 flex justify-center space-x-4 text-xs text-muted-foreground">
-                  <span>🌤️ OpenWeatherMap</span>
-                  <span>📅 Google Calendar</span>
-                  <span>✨ ZenQuotes</span>
-                  <span>📧 EmailJS</span>
-                </div>
+                  <motion.p
+                    animate={{ opacity: [0.5, 1, 0.5] }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                    className="text-sm font-medium text-primary"
+                  >
+                    Built with ❤️ for productive mornings
+                  </motion.p>
+                  <div className="mt-6 flex flex-wrap justify-center gap-3 text-xs font-medium text-muted-foreground">
+                    <motion.span 
+                      whileHover={{ scale: 1.1, y: -2 }}
+                      className="bg-background/50 px-3 py-1 rounded-full shadow-sm"
+                    >🌤️ OpenWeatherMap</motion.span>
+                    <motion.span 
+                      whileHover={{ scale: 1.1, y: -2 }}
+                      className="bg-background/50 px-3 py-1 rounded-full shadow-sm"
+                    >📅 Google Calendar</motion.span>
+                    <motion.span 
+                      whileHover={{ scale: 1.1, y: -2 }}
+                      className="bg-background/50 px-3 py-1 rounded-full shadow-sm"
+                    >✨ ZenQuotes</motion.span>
+                    <motion.span 
+                      whileHover={{ scale: 1.1, y: -2 }}
+                      className="bg-background/50 px-3 py-1 rounded-full shadow-sm"
+                    >📧 EmailJS</motion.span>
+                  </div>
+                </motion.div>
               </motion.footer>
             </motion.div>
           )}

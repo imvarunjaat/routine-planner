@@ -8,69 +8,69 @@ All colors MUST be HSL. Soft pastels and morning-inspired gradients.
 
 @layer base {
   :root {
-    /* Morning Sky Background */
-    --background: 220 50% 98%;
-    --foreground: 215 25% 15%;
+    /* Vibrant Sky Background */
+    --background: 210 60% 98%;
+    --foreground: 215 30% 15%;
 
-    /* Soft Card Colors */
-    --card: 210 60% 97%;
-    --card-foreground: 215 25% 15%;
+    /* Soft Card Colors with subtle gradient */
+    --card: 210 70% 97%;
+    --card-foreground: 215 30% 15%;
 
-    --popover: 210 60% 97%;
-    --popover-foreground: 215 25% 15%;
+    --popover: 210 70% 97%;
+    --popover-foreground: 215 30% 15%;
 
-    /* Morning Blue Primary */
-    --primary: 200 80% 60%;
+    /* Vibrant Blue Primary */
+    --primary: 196 85% 60%;
     --primary-foreground: 210 40% 98%;
-    --primary-glow: 200 80% 75%;
+    --primary-glow: 196 85% 75%;
 
-    /* Soft Lavender Secondary */
-    --secondary: 270 40% 92%;
-    --secondary-foreground: 270 30% 25%;
+    /* Rich Lavender Secondary */
+    --secondary: 265 60% 88%;
+    --secondary-foreground: 265 40% 25%;
 
-    /* Gentle Muted Tones */
-    --muted: 220 30% 95%;
-    --muted-foreground: 215 15% 50%;
+    /* Gentle Muted Tones with more contrast */
+    --muted: 210 40% 94%;
+    --muted-foreground: 215 25% 45%;
 
-    /* Sunrise Accent */
-    --accent: 30 90% 85%;
-    --accent-foreground: 30 40% 25%;
+    /* Sunrise Accent - more vibrant */
+    --accent: 25 95% 80%;
+    --accent-foreground: 25 50% 25%;
 
     /* Soft Warning */
-    --destructive: 0 70% 65%;
+    --destructive: 0 85% 65%;
     --destructive-foreground: 210 40% 98%;
 
-    /* Subtle Borders */
-    --border: 220 30% 88%;
-    --input: 220 30% 88%;
-    --ring: 200 80% 60%;
+    /* Enhanced Borders */
+    --border: 210 40% 88%;
+    --input: 210 40% 88%;
+    --ring: 196 85% 60%;
 
     --radius: 1rem;
 
-    /* Beautiful Morning Gradients */
-    --gradient-morning: linear-gradient(135deg, hsl(200 80% 85%), hsl(270 60% 90%));
-    --gradient-sunrise: linear-gradient(90deg, hsl(30 90% 85%), hsl(45 85% 80%));
-    --gradient-sky: linear-gradient(180deg, hsl(220 50% 98%), hsl(210 60% 95%));
-    --gradient-card: linear-gradient(145deg, hsl(210 60% 97%), hsl(220 40% 96%));
+    /* Beautiful Enhanced Gradients */
+    --gradient-morning: linear-gradient(135deg, hsl(196 85% 85%), hsl(265 70% 90%));
+    --gradient-sunrise: linear-gradient(90deg, hsl(25 95% 85%), hsl(45 90% 80%));
+    --gradient-sky: linear-gradient(180deg, hsl(210 60% 98%), hsl(196 70% 95%));
+    --gradient-card: linear-gradient(145deg, hsl(210 70% 97%), hsl(196 60% 96%));
 
     /* Elegant Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(200 80% 60% / 0.15);
-    --shadow-card: 0 8px 32px -8px hsl(200 50% 50% / 0.12);
-    --shadow-hover: 0 12px 40px -12px hsl(200 80% 60% / 0.25);
+    --shadow-soft: 0 4px 20px -4px hsl(196 85% 60% / 0.2);
+    --shadow-card: 0 8px 32px -8px hsl(196 70% 50% / 0.15);
+    --shadow-hover: 0 12px 40px -12px hsl(196 85% 60% / 0.3);
 
     /* Smooth Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     /* Sidebar (keeping minimal for this app) */
-    --sidebar-background: 220 50% 98%;
-    --sidebar-foreground: 215 25% 15%;
-    --sidebar-primary: 200 80% 60%;
+    --sidebar-background: 210 60% 98%;
+    --sidebar-foreground: 215 30% 15%;
+    --sidebar-primary: 196 85% 60%;
     --sidebar-primary-foreground: 210 40% 98%;
-    --sidebar-accent: 270 40% 92%;
-    --sidebar-accent-foreground: 270 30% 25%;
-    --sidebar-border: 220 30% 88%;
-    --sidebar-ring: 200 80% 60%;
+    --sidebar-accent: 265 60% 88%;
+    --sidebar-accent-foreground: 265 40% 25%;
+    --sidebar-border: 210 40% 88%;
+    --sidebar-ring: 196 85% 60%;
   }
 
   .dark {
@@ -159,6 +159,24 @@ All colors MUST be HSL. Soft pastels and morning-inspired gradients.
   /* Gradient backgrounds */
   .bg-gradient-morning {
     background: var(--gradient-morning);
+  }
+  
+  /* Custom drop shadows */
+  .drop-shadow-glow {
+    filter: drop-shadow(0 0 8px hsl(var(--primary-glow) / 0.5));
+    transition: filter 0.3s ease;
+  }
+  
+  .drop-shadow-glow:hover {
+    filter: drop-shadow(0 0 12px hsl(var(--primary-glow) / 0.7));
+  }
+  
+  .dark .drop-shadow-glow {
+    filter: drop-shadow(0 0 8px hsl(var(--primary-glow) / 0.6));
+  }
+  
+  .dark .drop-shadow-glow:hover {
+    filter: drop-shadow(0 0 15px hsl(var(--primary-glow) / 0.8));
   }
   
   .bg-gradient-sunrise {
