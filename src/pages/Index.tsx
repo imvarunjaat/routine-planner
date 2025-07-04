@@ -5,6 +5,7 @@ import { WeatherCard } from '@/components/WeatherCard';
 import { CalendarEvents } from '@/components/CalendarEvents';
 import { QuoteCard } from '@/components/QuoteCard';
 import { EmailSummary } from '@/components/EmailSummary';
+import { AnimatedBackground } from '@/components/animations/AnimatedBackground';
 import heroImage from '@/assets/morning-hero.jpg';
 
 const Index = () => {
@@ -59,6 +60,9 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-sky relative overflow-hidden">
+      {/* Animated Background */}
+      <AnimatedBackground />
+      
       {/* Hero Background */}
       <div 
         className="absolute inset-0 opacity-5"
