@@ -128,6 +128,10 @@ The app works beautifully on:
 3. Make your changes
 4. Add tests if applicable
 5. Submit a pull request
+   
+>>website screen shot<<
+ <img width="1440" alt="Screenshot 2025-07-06 at 2 04 55 AM" src="https://github.com/user-attachments/assets/28021edd-da34-4d7d-a216-151b6980f00f" />
+
 
 ---
 
